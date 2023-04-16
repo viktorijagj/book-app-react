@@ -8,17 +8,16 @@ function Main() {
   // fetch data
 
   const fetchData = async ()=> {
-    return await axios.get('https://example-data.draftbit.com/books?_limit=10')
+    return await axios.get('https://example-data.draftbit.com/books?_limit=20')
     .then((res)=>res.data)
-
   }
 
   const { data, status } = useQuery("books", fetchData);
+
+
   return (
     
     <main className='w-[80%] m-auto lg:w-full flex-grow'>
-        <h2 className='text-2xl font-bold text-green-900 mt-9 mb-3'>Wellcome to Boksy App!</h2>
-        <h5>Discover new experiences!</h5>
         {status === "error" && <p>Error fetching data</p>}
       {status === "loading" && <p>Loading...</p>}
       {status === "success" && (

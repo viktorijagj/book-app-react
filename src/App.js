@@ -5,6 +5,7 @@ import BookDetails from './componets/BookDetails';
 import Favourites from './componets/Favourites';
 import Header from './componets/Header';
 import Footer from './componets/Footer';
+import SearchedResult from './componets/SearchedResult';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Main/>} />
         <Route path='/details/:id' element={<BookDetails/>} />
         <Route path='/favourites' element={<Favourites/>} />
+        <Route path='/searched/:search' element={<SearchedResult/>}></Route>
       </Routes>
       <Footer />
     </div>
